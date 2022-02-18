@@ -1,10 +1,10 @@
 const StudentSchema = require("../models/Student");
+
 /*  
 HTTP REQUEST GET
 @ACCESS PUBLIC
 @URL api/students
 */
-
 exports.getAllStudents = async (req, res) => {
   try {
     let payload = await StudentSchema.find({});
@@ -31,6 +31,7 @@ exports.createStudent = async (req, res) => {
       std_id,
       email,
       courses,
+      photo:req.file
     };
     // save payload into database
     let data = await StudentSchema.create(payload);

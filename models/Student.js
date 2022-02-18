@@ -19,6 +19,10 @@ const StudentSchema = new Schema(
       required: true,
       default: ["Javafullstack"],
     },
+    photo: {
+      type: [""],
+      required:true
+    }
   },
   { timestamps: true }
 );
